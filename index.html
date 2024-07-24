@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>מסע הקוף בג'ונגל המכנה המשותף</title>
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="game-container">
+        <div id="start-screen" class="screen">
+            <h1>מסע הקוף בג'ונגל המכנה המשותף</h1>
+            <h2>חינוך מתמטי חווייתי - עם נופר</h2>
+            <div class="emoji-container">
+                <span class="emoji">🌴</span>
+                <span class="emoji">🐵</span>
+                <span class="emoji">🌿</span>
+                <span class="emoji">🦜</span>
+                <span class="emoji">🌳</span>
+            </div>
+            <button id="customize-button" class="game-button customize-button">עיצוב הקוף</button>
+            <button id="instructions-button" class="game-button instructions-button">הוראות</button>
+            <button id="start-game-button" class="game-button start-button">התחל משחק</button>
+        </div>
+        
+        <div id="customize-screen" class="screen" style="display:none;">
+            <div class="customize-title">
+                <h2>עצב את הקוף שלך</h2>
+            </div>
+            <div id="monkey-preview"></div>
+            <div class="customize-options">
+                <div>
+                    <h3>בחרו מסגרת לקוף:</h3>
+                    <div id="frame-colors"></div>
+                </div>
+                <div>
+                    <h3>אביזר:</h3>
+                    <div id="accessories"></div>
+                </div>
+                <div>
+                    <h3>סוג הקוף:</h3>
+                    <div id="monkey-types"></div>
+                </div>
+            </div>
+            <button id="start-game-from-customize" class="game-button start-button">למשחק</button>
+            <button id="back-to-start" class="game-button customize-button">חזרה למסך הראשי</button>
+        </div>
+        
+        <div id="instructions-screen" class="screen" style="display:none;">
+            <h2>הוראות המשחק</h2>
+            <div class="instructions-content">
+                <ul>
+                    <li>עזרו לקוף לקבל בננות על ידי פתרון שאלות על המכנה המשותף</li>
+                    <li>בכל שלב, תראו שני שברים על העצים</li>
+                    <li>הזינו את המכנה המשותף הקטן ביותר של שני השברים</li>
+                    <li>אם התשובה נכונה, הקוף יקבל בננה ותקבלו נקודה</li>
+                    <li>אם התשובה לא נכונה, תקבלו הזדמנות נוספת</li>
+                    <li>לאחר שתי טעויות, תראו את התשובה הנכונה ותעברו לשאלה הבאה</li>
+                </ul>
+                <p class="note">שימו לב - המכנה המשותף הקטן ביותר הוא המספר הקטן ביותר שיכול להתחלק בשני המכנים ללא שארית.</p>
+            </div>
+            <button id="back-to-start-2" class="game-button instructions-button">חזרה למסך הראשי</button>
+        </div>
+        
+        <div id="game-screen" class="screen" style="display:none;">
+            <button id="back-to-start-3" class="game-button start-button">חזרה למסך הראשי</button>
+            <h2 id="level">שלב 1</h2>
+            <div id="score">ניקוד: <span id="score-value">0</span> 🍌</div>
+            <div id="fraction-container">
+                <div class="tree-container">
+                    <div class="tree">🌴</div>
+                    <div class="fraction" id="fraction1"></div>
+                </div>
+                <div id="monkey"></div>
+                <div class="tree-container">
+                    <div class="tree">🌴</div>
+                    <div class="fraction" id="fraction2"></div>
+                </div>
+            </div>
+            <div id="input-container">
+                <input type="number" id="answer-input" placeholder="הזן את המכנה המשותף">
+                <button id="check-answer" class="game-button check-button">בדוק</button>
+            </div>
+            <div id="message"></div>
+            <div id="progress-bar"></div>
+        </div>
+    </div>
+    <audio id="applause-sound" src="https://www.soundjay.com/human/applause-01.mp3"></audio>
+    <script src="script.js"></script>
+</body>
+</html>
